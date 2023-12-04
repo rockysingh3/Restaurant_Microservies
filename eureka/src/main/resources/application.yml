@@ -1,0 +1,13 @@
+server:
+  port: 8761
+
+
+
+eureka:
+#  not needed since we are running on a machine that knows its own hostname
+  instance:
+    hostname: localhost
+#  switching off the client side behavior
+  client:
+    fetch-registry: false
+    register-with-eureka: false

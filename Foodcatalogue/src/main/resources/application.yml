@@ -1,0 +1,24 @@
+server:
+  port: 9092
+
+# pointing this client to eureka server - its hosted on the Eureka server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+# DB, JPA, and Hibernate configurtion
+spring:
+  application:
+    name: FOOD-CATALOGUE-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/foodcataloguedb
+    username: root
+    password: Gur#sin#3333
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    #    shows all the SQL queries on the console that hibernate executes
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
