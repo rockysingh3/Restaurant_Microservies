@@ -45,6 +45,10 @@ public class FoodCatalogueService {
         foodCataloguePageDTO.setRestaurantDTO(restaurantDTO);
         return foodCataloguePageDTO;
     }
+
+    /*
+    * To get the details of the restaurant we have to call the restaurant service
+    * */
     private RestaurantDTO fetchResaurantDetailsFromRestaurantMS(Integer restaurantId) {
 
         /*
@@ -56,6 +60,9 @@ public class FoodCatalogueService {
 
     }
 
+    /*
+    * every food item has a restaurant id associted with it
+    * */
     private List<FoodItem> fetchFoodItemList(Integer restaurantId) {
 
         return foodItemRepo.findByRestaurantId(restaurantId);
