@@ -26,9 +26,10 @@ public class FoodCatalogueController {
 
     @GetMapping("/fetchRestaurantAndFoodItemsById/{restaurantId}")
     public ResponseEntity<FoodCataloguePageDTO> fetchRestaurantDetailsWithFoodMenu(@PathVariable Integer restaurantId) {
+
         FoodCataloguePageDTO foodCataloguePageDTO = foodCatalogueService.fetchFoodCataloguePageDetails(restaurantId);
         /*
-        * FoodCataloguePage is a list of foods and restaurant details
+        * FoodCataloguePage is a DTO of list of foods and restaurant details
         * */
         return new ResponseEntity<>(foodCataloguePageDTO, HttpStatus.OK);
     }
